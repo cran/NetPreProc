@@ -1,0 +1,15 @@
+exportPattern("^[[:alpha:]]+")
+exportMethods(
+    "Binary.matrix.by.thresh",
+    "check.network",
+    "Chua.norm",
+    "Laplacian.norm",
+    "Magnify.binary.features.norm",
+    "Max.Min.norm",
+    "Prob.norm",
+    "Sparsify.matrix.fixed.neighbours",
+    "Sparsify.matrix" 
+)
+
+importClassesFrom(graph, graph, graphNEL, graphAM)
+

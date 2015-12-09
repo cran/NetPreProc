@@ -51,8 +51,7 @@ W <- Chua.norm(Yeast.Biogrid.data);}
 
 \references{
 Chua, H., Sung, W., & Wong, L. An efficient strategy for extensive
-integration of diverse biological data for protein function prediction. Bioin-
-formatics, 23 , 3364--3373, 2007.
+integration of diverse biological data for protein function prediction. Bioinformatics, 23 , 3364--3373, 2007.
 }
 
 \keyword{methods}

@@ -1,9 +1,9 @@
-baf0627988dd610a992a0cec22356f4c *DESCRIPTION
-8f06bbe57a22536d1eb5b9e2310bb421 *NAMESPACE
-6eb6ff2805270ede7587d923c934b73e *R/NetPreProc.R
-1a1566087dcdcc28d4049bc654a07412 *inst/doc/NetPreProc.pdf
+e41dad8d9e1c6b127debd4bca694813a *DESCRIPTION
+a96924aef8348f9e1327ec175c1b5de9 *NAMESPACE
+a14cc2ba4bf66baabd43133d8cd36208 *R/NetPreProc.R
+281e575080c4121ce1f1236561bb823d *inst/doc/NetPreProc.pdf
 d6e3703216f0f8cb867b0292cca0519d *man/Binary.matrix.by.thresh-methods.Rd
-7d41a8c2e1416d61ed12c0eb121a26c9 *man/Chua.norm-methods.Rd
+89ab6fb3424ec6bb28c1aabcb7e6e5da *man/Chua.norm-methods.Rd
 7d068131c799df0feb07fe61799a7a2f *man/Do.sim.matrix.Pearson.Rd
 114dfe3315b5de872532d3e9dd60b99c *man/Laplacian.norm-methods.Rd
 fa308029d6cd98d010fc2d80e55e0483 *man/Magnify.binary.features.norm-methods.Rd

@@ -4,7 +4,7 @@
 # December 2011
 
 # dyn.load("NetPreProc.so");
-indx<<-0;
+# indx<<-0;
 
 ########################################################
 setGeneric("Magnify.binary.features.norm", 
@@ -19,24 +19,22 @@ setGeneric("Magnify.binary.features.norm",
 # the pre-processed matrix
 setMethod("Magnify.binary.features.norm", signature(M="matrix"),
   function(M) {
-	pos.feat <- apply(M,2,sum);
-	b <- pos.feat/nrow(M);
-	indx <<- 1;
-	M.mo<-apply(M,2, function(x,b) {
-      pos <- -log(b[indx]);
-      neg <- log(1-b[indx]);
-      indx <<- indx + 1;
-      x[x==1] <- pos;
-      x[x==0] <- neg;
-      return(x);
-	},b);
-	rm(indx, pos=1);
+	n.feat <- ncol(M);
+	n.ex <- as.double(nrow(M));
+	M.mo <- matrix(numeric(nrow(M)*ncol(M)),nrow=nrow(M));
+	for (i in 1:n.feat) {
+	  b <- sum(M[,i])/n.ex;
+	  M.mo[M[,i]==1, i] <- -log(b);
+	  M.mo[M[,i]==0, i] <- log(1-b);	
+	}
 	# setting to  positive all weights
 	M.mo <- M.mo - min(M.mo);
 	rownames(M.mo) <- rownames(M);
 	return(M.mo);
   }
 )
+
+
 
 
 ########################################################
@@ -394,4 +392,5 @@ function(W, name="Network matrix") {
 	   library.dynam("NetPreProc", pkgname, libname);
       
 .onAttach <- function(libname=.libPaths(), pkgname="NetPreProc")
-			  cat("NetPreProc: Network Pre-Processing package for graph normalization. \n");	  
+              packageStartupMessage("NetPreProc: Network Pre-Processing package for graph normalization. \n");
+			  

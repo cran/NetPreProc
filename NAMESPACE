@@ -12,4 +12,5 @@ exportMethods(
 )
 
 importClassesFrom(graph, graph, graphNEL, graphAM)
-
+import(methods)
+importFrom("stats", "cor")

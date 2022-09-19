@@ -41,11 +41,12 @@ a matrix representing the adjacency matrix of the graph
 
 
 \examples{
-\dontrun{library(bionetdata);
+library(bionetdata);
 # making transition prob matrix for a drug-drug similarity network
 data(DD.chem.data);
 W <- Prob.norm(DD.chem.data);
 # the same using an object of class graphAM and of class graphNEL
+\donttest{
 g <- new("graphAM", adjMat=DD.chem.data, values=list(weight=DD.chem.data));
 Wg <- Prob.norm(g);
 g2 <- as(g, "graphNEL");

@@ -38,14 +38,14 @@ a matrix representing the adjacency matrix of the graph
 }}
 
 \examples{
-\dontrun{library(bionetdata);
+library(bionetdata);
 # max-min normalization for a drug-drug similarity network
 data(DD.chem.data);
 W <- Max.Min.norm(DD.chem.data);
 # the same using an object of class graphAM 
+\donttest{
 g <- new("graphAM", adjMat=DD.chem.data, values=list(weight=DD.chem.data));
 Wg <- Max.Min.norm(g);}
-
 }
 
 

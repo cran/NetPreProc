@@ -44,8 +44,8 @@ a matrix representing the adjacency matrix of the graph
 
 
 \examples{
-library(bionetdata);
-\dontrun{data(Yeast.Biogrid.data);
+\donttest{library(bionetdata);
+data(Yeast.Biogrid.data);
 W <- Chua.norm(Yeast.Biogrid.data);}
 }
 

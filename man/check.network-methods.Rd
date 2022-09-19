@@ -23,7 +23,7 @@ a character vector that will be printed as heading
 }
 }
 \value{
-It outputs on the standard output the chracteristics of the graph
+It return a list of strings about the characteristics of the graph
 }
 
 \section{Methods}{
@@ -42,17 +42,14 @@ a matrix representing the adjacency matrix of the graph
 library(bionetdata);
 data(DD.chem.data);
 check.network(DD.chem.data);
-
-\dontrun{W <- Prob.norm(DD.chem.data);
-check.network(W, "prob. transition matrix");}
-\dontrun{WL <- Laplacian.norm(DD.chem.data);
+W <- Prob.norm(DD.chem.data);
+check.network(W, "prob. transition matrix");
+\donttest{WL <- Laplacian.norm(DD.chem.data);
 check.network(WL, "Laplacian norm. matrix");}
 
 library(graph)
 g1 = randomEGraph(LETTERS[1:15], edges = 40);
 check.network(g1, "random graph");
-
-
 }
 
 

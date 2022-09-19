@@ -46,8 +46,7 @@ W <- Laplacian.norm(as.matrix(FIN.data));
 # sparsification with 10 neighbours per node 
 W10 <- Sparsify.matrix.fixed.neighbours(W);
 # sparsification with 20 neighbours per node 
-\dontrun{W20 <- Sparsify.matrix.fixed.neighbours(W, k=20);}
-
+\donttest{W20 <- Sparsify.matrix.fixed.neighbours(W, k=20);}
 }
 
 

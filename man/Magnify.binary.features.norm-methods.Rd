@@ -44,4 +44,3 @@ for predicting gene function. Genome Biology, 9, 2008.
 
 
 \keyword{methods}
-\keyword{ ~~ other possible keyword(s) ~~ }

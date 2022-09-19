@@ -353,28 +353,32 @@ setGeneric("check.network",
 # Method to check the characteristics of a network matrix
 # Input:
 # W : a network matrix
-# name : a character vector that will be printed as heading
+# name : a character vector that will be printed as heading 
+# Output:
+# a list of strings collecting the information about the network
 setMethod("check.network", signature(W="matrix"),
 function(W, name="Network matrix") {
-   cat(name, ": *** \n");
+   li = list();
+   li[1] <- paste(name, ": ***");
    if (any(is.na(W)))
-     cat("WARNING: the matrix contains NA  ****", "\n");
+      li=c(li,"WARNING: the matrix contains NA  ****");
    if (any(is.nan(W)))
-     cat("WARNING:", name, "contains NaN  ****", "\n");
+     li=c(li,paste("WARNING:", name, "contains NaN  ****"));
    if (any(is.infinite(W)))
-     cat("WARNING: the matrix contains Inf values  ****", "\n");
+     li=c(li,"WARNING: the matrix contains Inf values  ****");
    rr <- range(W);
    if ((rr[2] - rr[1]) <= 0)
-     cat("WARNING: the matrix has values in a wrong range: ", rr, "***** \n");
+     li=c(li,paste("WARNING: the matrix has values in a wrong range: ", rr, "*****"));
    if (!isSymmetric(W))
-     cat("WARNING: the matrix is not symmetric  ****** \n");
+     li=c(li,"WARNING: the matrix is not symmetric  ******");
    dimen <- dim(W);
    edges <- sum(W>0);
    perc.edges <- round((edges/(dimen[1]*dimen[2])),5);
-   cat("the network matrix has dimension: ", dimen, "\n");
-   cat("the network has edge values in the range: ", rr, "\n");
-   cat("the network has number of edges: ", edges, "\n");
-   cat("the network has density: ", perc.edges, "\n");
+   li=c(li,paste("the network matrix has dimension: ", dimen[1], dimen[2]));
+   li=c(li,paste("the network has edge values in the range: ", rr[1], rr[2]));
+   li=c(li,paste("the network has number of edges: ", edges));
+   li=c(li,paste("the network has density: ", perc.edges));
+   return(li);
 })
 
 
@@ -382,6 +386,8 @@ function(W, name="Network matrix") {
 # Input:
 # W : an object of the virtual class graph (hence including objects of class graphAM  and graphNEL from the package graph).
 # name : a character vector that will be printed as heading
+# Output:
+# a list of strings collecting the information about the network
 setMethod("check.network", signature(W="graph"),
 function(W, name="Network matrix") {
    W <- as(W, "matrix");

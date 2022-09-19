@@ -42,10 +42,10 @@ a matrix representing the adjacency matrix of the graph
 \examples{
 library(bionetdata);
 # normalization of drug-drug similarity networks
-\dontrun{data(DD.chem.data);
+data(DD.chem.data);
 W <- Laplacian.norm(DD.chem.data);
 # the same using an object of class graphAM
-g <- new("graphAM", adjMat=DD.chem.data, values=list(weight=DD.chem.data));
+\donttest{g <- new("graphAM", adjMat=DD.chem.data, values=list(weight=DD.chem.data));
 Wg <- Laplacian.norm(g);}
 }
 
